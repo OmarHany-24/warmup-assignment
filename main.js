@@ -55,7 +55,7 @@ function isInEidPeriod(dateStr) {
 
 function readLines(path) {
     const data = fs.readFileSync(path, { encoding: "utf8" });
-    return data.trimEnd().split(/\r?\n/);
+    return data.replace(/\r?\n$/, "").split(/\r?\n/);
 }
 
 function getDayName(dateStr) {
